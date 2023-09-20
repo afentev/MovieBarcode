@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-vidcap = cv2.VideoCapture('/Users/user/Downloads/Барби_2023_WEB-DLRip-AVC.mkv')  # path to movie
+vidcap = cv2.VideoCapture('/Users/user/Downloads/film.mkv')  # path to movie
 success, image = vidcap.read()
 total_frames = int(int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)))  # * (1 - 81 / 1023))
 length = 1024
