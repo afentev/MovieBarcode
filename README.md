@@ -56,4 +56,4 @@ Script that generates barcode for the given movie.
 	</tr> 
 </table>
 
-You can find more examples at github.com/afentev/MovieBarcode/tree/main/Films
+You can find more examples at https://github.com/afentev/MovieBarcode/tree/main/Films
