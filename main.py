@@ -1,31 +1,40 @@
 import cv2
 import numpy as np
+import concurrent.futures
 
-vidcap = cv2.VideoCapture('/Users/user/Downloads/film.mkv')  # path to movie
-success, image = vidcap.read()
-total_frames = int(int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT)))  # * (1 - 81 / 1023))
+# Path to the video file
+video_path = '/Users/user/Downloads/film.mkv'
+vidcap = cv2.VideoCapture(video_path)
+total_frames = int(vidcap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+# Desired number of columns in the result image
 length = 1024
-c = total_frames // length
 
-result = np.ndarray((image.shape[0], length, 3))
+# Calculate the step size
+step = total_frames // length
+frames = []
 
-# for cap in range(c):
-#     print(cap / c * 100)
-#     frame_number = cap * c
-#     vidcap.set(cv2.CAP_PROP_POS_FRAMES, frame_number - 1)
-#     success, image = vidcap.read()
-#     result[:, cap, :] = image.mean(axis=1)
+with concurrent.futures.ProcessPoolExecutor() as executor:
+    success = True
+    count = -1
+    while success:
+        count += 1
+        print(count / total_frames * 100)
+        success = vidcap.grab()
+        div, mod = divmod(count, step)
+        if div >= length:
+            break
+        if mod != 0:
+            continue
+        _, image = vidcap.retrieve()
+        frames.append(executor.submit(lambda frame: frame.mean(axis=1), image))
 
-count = -1
-while success:
-    count += 1
-    print(count / total_frames * 100)
-    success, image = vidcap.read()
-    div, mod = divmod(count, c)
-    if div >= length:
-        break
-    if mod != 0:
-        continue
-    result[:, div, :] = image.mean(axis=1)
+vidcap.release()
 
-cv2.imwrite("Barbie.png", result)     # save frame as .png file
+height, width = frames[0].result().shape
+result = np.empty((height, length, 3), dtype=np.uint8)
+
+for i, mean_values in enumerate(frames):
+    result[:, i, :] = mean_values.result()
+
+cv2.imwrite("output.png", result)
