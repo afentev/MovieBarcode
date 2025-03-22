@@ -2,6 +2,11 @@ import cv2
 import numpy as np
 import concurrent.futures
 
+
+def process_image(frame):
+    return frame.mean(axis=1)
+
+
 # Path to the video file
 video_path = '/Users/user/Downloads/film.mkv'
 vidcap = cv2.VideoCapture(video_path)
@@ -27,7 +32,7 @@ with concurrent.futures.ProcessPoolExecutor() as executor:
         if mod != 0:
             continue
         _, image = vidcap.retrieve()
-        frames.append(executor.submit(lambda frame: frame.mean(axis=1), image))
+        frames.append(executor.submit(process_image, image))
 
 vidcap.release()
 

@@ -53,6 +53,16 @@ Script that generates barcode for the given movie.
 			<img src="https://preview.redd.it/whiplash-poster-i-made-hope-you-enjoy-v0-msgvq0zdzh1b1.jpg?width=3000&format=pjpg&auto=webp&s=32666d7b76995b165926fc56fe0be9942594f768" width="266">
 			<br>Whiplash poster
 		</td>
+	</tr>
+    <tr> 
+		<td align="center">
+			<img src="Films/TwinPeaks_S01.png" width="400" height="233">
+			<br>Twin Peaks Season 1 barcode
+		</td> 
+		<td align="center">
+			<img src="https://bocasalada.org/wp-content/uploads/2020/07/49629754_467727953759566_756667830467821568_o-1.jpg" width="266">
+			<br>Twin Peaks poster
+		</td>
 	</tr> 
 </table>
 
