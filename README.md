@@ -4,7 +4,7 @@ Script that generates barcode for the given movie.
 <table> 
 	<tr> 
 		<td align="center" valign="middle">
-			<img src="https://github.com/afentev/MovieBarcode/blob/main/Films/Matrix.png?raw=true" width="400" height="233">
+			<img src="Films/Matrix.png" width="400" height="233">
       <br>
 			Matrix barcode
 		</td> 
@@ -15,7 +15,7 @@ Script that generates barcode for the given movie.
 	</tr> 
 	<tr> 
 		<td align="center" valign="middle">
-			<img src="https://github.com/afentev/MovieBarcode/blob/main/Films/Madmax.png?raw=true" width="400" height="233">
+			<img src="Films/Madmax.png" width="400" height="233">
       <br>
 			Madmax barcode
 		</td> 
@@ -26,7 +26,7 @@ Script that generates barcode for the given movie.
 	</tr> 
 	<tr> 
 		<td align="center">
-			<img src="https://github.com/afentev/MovieBarcode/blob/main/Films/Barbie.png?raw=true" width="400" height="233">
+			<img src="Films/Barbie.png" width="400" height="233">
 			<br>Barbie barcode
 		</td> 
 		<td align="center">
@@ -36,7 +36,7 @@ Script that generates barcode for the given movie.
 	</tr> 
 	<tr> 
 		<td align="center">
-			<img src="https://raw.githubusercontent.com/afentev/MovieBarcode/main/Films/Avatar.png" width="400" height="233">
+			<img src="Films/Avatar.png" width="400" height="233">
 			<br>Avatar barcode
 		</td> 
 		<td align="center">
@@ -46,7 +46,7 @@ Script that generates barcode for the given movie.
 	</tr> 
 	<tr> 
 		<td align="center">
-			<img src="https://raw.githubusercontent.com/afentev/MovieBarcode/main/Films/Whiplash.png" width="400" height="233">
+			<img src="Films/Whiplash.png" width="400" height="233">
 			<br>Whiplash barcode
 		</td> 
 		<td align="center">
